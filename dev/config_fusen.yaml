@@ -1,0 +1,28 @@
+flat_additional.Rmd:
+  path: dev/flat_additional.Rmd
+  state: active
+  R: R/extract_text.R
+  tests: tests/testthat/test-extract_text.R
+  vignettes: vignettes/core-functionality.Rmd
+  inflate:
+    flat_file: dev/flat_additional.Rmd
+    vignette_name: Core Functionality
+    open_vignette: true
+    check: true
+    document: true
+    overwrite: ask
+    clean: ask
+flat_teaching.Rmd:
+  path: dev/flat_teaching.Rmd
+  state: active
+  R: R/add_one.R
+  tests: tests/testthat/test-add_one.R
+  vignettes: vignettes/get-started.Rmd
+  inflate:
+    flat_file: dev/flat_teaching.Rmd
+    vignette_name: Get started
+    open_vignette: true
+    check: true
+    document: true
+    overwrite: ask
+    clean: ask

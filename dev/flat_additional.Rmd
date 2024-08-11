@@ -1,0 +1,72 @@
+---
+title: "flat_additional.Rmd Core Functionality"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r development, include=FALSE}
+library(testthat)
+library(tesseract)
+library(lubridate)
+library(dplyr)
+library(stringr)
+library(purrr)
+library(glue)
+library(calendar)
+```
+
+```{r development-load}
+# Load already included functions if relevant
+pkgload::load_all(export_all = FALSE)
+```
+
+# extract_text
+
+This function extracts lines of text from a schedule screenshot 
+
+```{r}
+library(testthat)
+library(tesseract)
+library(lubridate)
+library(dplyr)
+library(stringr)
+library(purrr)
+library(glue)
+library(calendar)
+```
+
+```{r function-extract_text}
+#' my_fun extract_text
+#'
+#' @return 1
+#' @export
+#'
+#' @examples
+extract_text <- function(img_file) {
+  
+  eng <- tesseract::tesseract("eng")
+  text <- tesseract::ocr(img_file, engine = eng)
+
+  text
+}
+```
+
+```{r examples-extract_text}
+img_file <- system.file("testdata/IMG_0579.PNG", package = "ScreenShot2CalendarEndpoint")
+extract_text(img_file)
+```
+
+```{r tests-extract_text}
+test_that("extract_text works", {
+  expect_true(is.character(extract_text(system.file("testdata/IMG_0579.PNG", package = "ScreenShot2CalendarEndpoint"))))
+})
+```
+
+
+```{r development-inflate, eval=FALSE}
+# Run but keep eval=FALSE to avoid infinite loop
+# Execute in the console directly
+fusen::inflate(flat_file = "dev/flat_additional.Rmd", vignette_name = "Core Functionality")
+```
+
