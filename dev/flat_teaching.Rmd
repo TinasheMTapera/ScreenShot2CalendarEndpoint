@@ -1,0 +1,111 @@
+---
+title: "flat_teaching.Rmd for working package"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- 
+Run this 'development' chunk
+
+Store every call to library() that you need to run chunks line by line, as in a classical Rmd for analysis
+-->
+
+```{r development, include=FALSE}
+library(testthat)
+```
+
+<!--
+# Description of your package
+
+This will fill the description of your package.
+Fill and run the content of this chunk, before anything else. 
+
+Note: when you will use other flat templates, this part will be in a separate file. Do not be surprised!
+--> 
+
+```{r description, eval=FALSE}
+# Describe your package
+fusen::fill_description(
+  pkg = here::here(),
+  fields = list(
+    Title = "ScreenShot2CalendarEndpoint",
+    Description = "Use a screenshot of the schedule to generate an ical event file using an R API endpoint.",
+    `Authors@R` = c(
+      person("Tinashe", "Tapera", email = "tinashemtapera@gmail.com", role = c("aut", "cre"))
+    )
+  ), overwrite = TRUE
+)
+# Define License with use_*_license()
+usethis::use_mit_license("Tinashe M. Tapera")
+```
+
+# Add one to any value
+
+This is the first tool of our wonderful package. 
+You can add `1` to any `value` using function `add_one()`.
+
+<!-- 
+This first section shows:
+
+- the three parts necessary for a package: 'function', 'examples' and 'tests'.  
+  + Note that the three following chunks have names accordingly.
+
+-->
+
+```{r function-add_one}
+#' Add one to any value
+#'
+#' @param value A numeric value
+#'
+#' @return Numeric. value + 1
+#' @export
+
+add_one <- function(value) {
+  result <- value + 1
+  return(result)
+}
+```
+
+<!--
+Here is an example on how to use the function.
+This should be a reproducible and working example
+-->
+
+```{r examples-add_one}
+add_one(12)
+add_one(56)
+```
+
+<!--
+Here are some unit tests to verify the function works as expected.
+-->
+
+```{r tests-add_one}
+test_that("add_one works", {
+  expect_equal(add_one(12), 13)
+  expect_equal(add_one(56), 57)
+})
+```
+
+That's it ! This the end of the documented story of our package. All components are there.
+
+<!-- 
+# Inflate your package
+
+You're one inflate from paper to box.
+Build your package from this very Rmd using `fusen::inflate()` 
+-->
+
+
+```{r development-inflate, eval=FALSE}
+# Execute in the console directly
+fusen::inflate(flat_file = "dev/flat_teaching.Rmd")
+```
+
+<!-- 
+- Verify your `"DESCRIPTION"` file has been updated
+- Verify your function is in `"R/"` directory
+- Verify your test is in `"tests/testthat/"` directory
+- Verify this Rmd appears in `"vignettes/"` directory 
+-->
