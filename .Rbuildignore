@@ -1,0 +1,4 @@
+^renv$
+^renv\.lock$
+^ScreenShot2CalendarEndpoint\.Rproj$
+^\.Rproj\.user$
