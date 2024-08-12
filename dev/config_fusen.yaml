@@ -1,8 +1,14 @@
 flat_additional.Rmd:
   path: dev/flat_additional.Rmd
   state: active
-  R: R/extract_text.R
-  tests: tests/testthat/test-extract_text.R
+  R:
+  - R/extract_text.R
+  - R/get_shifts.R
+  - R/get_week.R
+  tests:
+  - tests/testthat/test-extract_text.R
+  - tests/testthat/test-get_week.R
+  - tests/testthat/test-get_shifts.R
   vignettes: vignettes/core-functionality.Rmd
   inflate:
     flat_file: dev/flat_additional.Rmd

@@ -26,18 +26,6 @@ library(ScreenShot2CalendarEndpoint)
 # extract_text
 
 This function extracts lines of text from a schedule screenshot 
-```{r}
-library(testthat)
-library(tesseract)
-library(lubridate)
-library(dplyr)
-library(stringr)
-library(purrr)
-library(glue)
-library(calendar)
-```
-
-
 
 ```{r examples-extract_text}
 img_file <- system.file("testdata/IMG_0579.PNG", package = "ScreenShot2CalendarEndpoint")
@@ -46,4 +34,32 @@ extract_text(img_file)
 
 
 
+# get_week
+    
+  
+```{r example-get_week}
+#' \dontrun{
+#' img_file <- system.file("testdata/IMG_0579.PNG", package = "ScreenShot2CalendarEndpoint")
+#' text <- extract_text(img_file)
+#' text %>% 
+#'   str_split_1("\n") %>% 
+#'   get_week()
+#' }
+
+```
+
+  
+
+# get_shifts
+    
+  
+
+```{r example-get_shifts}
+#' \dontrun{text %>% 
+#'     str_split_1("\n") %>% 
+#'     get_shifts()}
+```
+
+  
+  
 

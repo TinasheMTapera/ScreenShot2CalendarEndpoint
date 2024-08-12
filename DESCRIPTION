@@ -7,18 +7,16 @@ Description: Use a screenshot of the schedule to generate an ical event
     file using an R API endpoint.
 License: MIT + file LICENSE
 Imports: 
+    dplyr,
+    lubridate,
     magrittr,
     plumber,
+    purrr,
+    stringr,
     tesseract
 Suggests: 
-    calendar,
-    dplyr,
-    glue,
     knitr,
-    lubridate,
-    purrr,
     rmarkdown,
-    stringr,
     testthat
 VignetteBuilder: 
     knitr

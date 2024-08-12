@@ -2,15 +2,18 @@
 % Please edit documentation in R/extract_text.R
 \name{extract_text}
 \alias{extract_text}
-\title{my_fun extract_text}
+\title{extract_text}
 \usage{
 extract_text(img_file)
 }
+\arguments{
+\item{img_file}{Screenshot of the schedule for the week}
+}
 \value{
-1
+Text extracted from the screenshot
 }
 \description{
-my_fun extract_text
+Extract text from a screenshot image
 }
 \examples{
 img_file <- system.file("testdata/IMG_0579.PNG", package = "ScreenShot2CalendarEndpoint")
