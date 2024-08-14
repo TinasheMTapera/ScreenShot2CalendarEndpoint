@@ -63,4 +63,4 @@ RUN R -e "devtools::install()"
 EXPOSE 8080
 
 # entrypoint
-CMD [ "Rscript", "run.R" ]
+ENTRYPOINT [ "Rscript", "run.R"]
