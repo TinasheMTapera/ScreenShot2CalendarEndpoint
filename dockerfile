@@ -60,7 +60,8 @@ RUN R -e "devtools::check()"
 RUN R -e "devtools::install()"
 
 # expose the port for the api
+ENV PORT=8080
 EXPOSE 8080
 
 # entrypoint
-ENTRYPOINT [ "Rscript", "run.R"]
+ENTRYPOINT ["R", "-e", "pr <- plumber::plumb('plumber.R'); pr$run(host='0.0.0.0', port=as.numeric(Sys.getenv('PORT')))"]
